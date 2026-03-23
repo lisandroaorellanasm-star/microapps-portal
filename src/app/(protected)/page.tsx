@@ -1,7 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { GlassCard } from '@/components/ui/GlassCard'
-import { GlowButton } from '@/components/ui/GlowButton'
+import { SignOutButton } from '@/components/ui/SignOutButton'
 import { Hexagon } from 'lucide-react'
 
 export default async function ProtectedPage() {
@@ -49,11 +49,7 @@ export default async function ProtectedPage() {
           Hello, <span className="font-medium text-white">{firstName}</span> 👋
         </p>
 
-        <form action="/auth/signout" method="post">
-          <GlowButton variant="ghost" type="submit" className="opacity-80 hover:opacity-100 px-6 py-2 rounded-full border border-white/10">
-            Sign Out
-          </GlowButton>
-        </form>
+        <SignOutButton />
 
         <div className="mt-8 pt-8 border-t border-white/10 w-full text-sm text-base-content/50">
           We will notify you when everything is ready.
